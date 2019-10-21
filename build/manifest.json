@@ -49,10 +49,16 @@
     "debug": true
   },
   "router": {
-    "entry": "/pages/index",
+    "entry": "pages/login",
     "pages": {
-      "/pages/index": {
+      "pages/index": {
         "component": "index"
+      },
+      "pages/login": {
+        "component": "login"
+      },
+      "pages/phoneLogin": {
+        "component": "phoneLogin"
       }
     },
     "widgets": {}

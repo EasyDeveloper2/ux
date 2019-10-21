@@ -1,0 +1,15 @@
+<template>
+    <div>
+        <text>手机登录</text>
+    </div>
+</template>
+
+<script>
+export default {
+
+}
+</script>
+
+<style>
+
+</style>

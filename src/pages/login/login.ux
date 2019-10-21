@@ -1,0 +1,72 @@
+<template>
+    <div class="page">
+        <img src="" alt="" class="icon">
+        <text class="title">钱多赚一点，生活好一点！</text>
+        <div class="btn-login-container">
+
+            <div class="btn-login" onclick="onPushToLogin">
+                <text class="btn-login__text">微信登录</text>
+            </div>
+        </div>
+
+    </div>
+
+</template>
+
+<script>
+import router from '@system.router'
+import prompt from '@system.prompt'
+export default {
+    onPushToLogin() {
+        prompt.showToast({
+            message: 'sssss'
+        })
+        router.push({
+            uri: '/pages/phoneLogin'
+        })
+    }
+}
+</script>
+
+<style scoped>
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.icon {
+  margin-top: 200px;
+  width: 160px;
+  height: 160px;
+  background-color: #eee;
+}
+.title {
+  margin-top: 34px;
+  font-size: 32px;
+  color: #5e5e5e;
+}
+.btn-login-container {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-login {
+  width: 520px;
+  height: 100px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #11aa3a;
+  color: white;
+}
+.btn-login__text {
+  color: white;
+  font-size: 30px;
+}
+</style>
