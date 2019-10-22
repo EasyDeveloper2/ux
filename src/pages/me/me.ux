@@ -1,5 +1,65 @@
 <template>
-    
+<div class="page">
+ <div class="page__header">
+    <img class="page__header__icon" src="" alt="">
+    <div class="page__header__right">
+        <div class="page__header__right__top">
+         <text class="page__header__right__username">往事随风</text>
+         <img class="page__header__right__icon" src="" alt="">
+        </div>
+        <text class="page__header__right__date">有效期:2019-12-23</text>
+    </div>
+ </div>
+
+ <!-- 累计收入 -->
+ <div class="group1">
+     <text class="group1__title">累计总收入(元):</text>
+     <text class="group1__price">¥546.00</text>
+ </div>
+
+ <!-- 历史总佣金情况 -->
+ <div class="group2">
+     <div class="group2__top">
+       <div class="group2__top__line"></div>
+       <img class="group2__top__icon" src="" alt="">
+       <text class="group2__top__title">历史总佣金情况</text>
+       <div class="group2__top__line"></div>
+     </div>
+     <div class="group2__list">
+         <div class="group2__list__item">
+             <text class="group2__list__item__price">456</text>
+             <div class="group2__list__item__bottom">
+                 <img class="group2__list__item__bottom__icon" src="" alt="" />
+                 <text class="group2__list__item__bottom__title">待结算佣金</text>
+             </div>
+         </div>
+         <div class="group2__list__line"></div>
+         <div class="group2__list__item">
+             <text class="group2__list__item__price">456</text>
+             <div class="group2__list__item__bottom">
+                 <img class="group2__list__item__bottom__icon" src="" alt="" />
+                 <text class="group2__list__item__bottom__title">已结算佣金</text>
+             </div>
+         </div>
+             <div class="group2__list__line"></div>
+             <div class="group2__list__item">
+             <text class="group2__list__item__price">456</text>
+             <div class="group2__list__item__bottom">
+                 <img class="group2__list__item__bottom__icon" src="" alt="" />
+                 <text class="group2__list__item__bottom__title">已失效佣金</text>
+             </div>
+         </div>
+     </div>
+ </div>
+
+ <!-- 我的销售单 -->
+ <div class="cell">
+     <text class="cell__title">
+         我的销售单
+     </text>
+     <img class="cell__arraw" src="" alt="">
+ </div>
+</div>
 </template>
 
 <script>
@@ -9,5 +69,145 @@ export default {
 </script>
 
 <style>
+.page{
+ display: flex;
+ flex-direction: column;
+ background-color: #f7f7f7;
+ align-items: center;
+}
+.page__header{
+    width: 100%;
+    height: 318px;
+    background:linear-gradient(221deg,rgba(255,163,86,1) 0%,rgba(216,11,42,1) 100%);
+    display: flex;
+}
+.page__header__icon{
+    margin-top: 60px;
+    width: 120px;
+    height: 120px;
+    background-color: #eee;
+    margin-left: 32px;
+    border-radius: 60px;
+}
+.page__header__right{
+ margin-top: 72px;
+ margin-left: 16px;
+ flex-direction: column;
+}
+.page__header__right__top{
+ display: flex;
+ align-items: center;;
+}
+.page__header__right__username{
+ font-size: 34px;
+ color: white;
+}
+.page__header__right__icon{
+  width: 124px;
+  height: 35px;
+  margin-left: 10px;
+}
+.page__header__right__date{
+ margin-top: 10px;
+ font-size: 28px;
+ color: #FFFFFF;
+}
+.group1{
+    margin-top: 20px;
+    width: 686px;
+    height: 100px;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+}
+.group1__title{
+    margin-left: 32px;
+    color: #333333;
+    font-size: 28px;
+}
+.group1__price{
+    margin-left: 10px;
+    font-weight: bold;
+    color: #DF3852;
+}
+.group2{
+    margin-top: 20px;
+ width: 678px;
+ flex-direction: column;
+ align-items: center;
+ background-color: white;
+ height: 262px;
+}
+.group2__top{
+    margin-top: 30px;
+    flex-direction: row;
+    align-items: center;
+}
+.group2__top__line{
+  width: 34px;
+  height: 4px;
+  background-color:#333333; 
+}
+.group2__top__icon{
+    margin-left: 20px;
+ width: 34px;
+ height: 34px;
+ background-color: #D80B2A;
+}
+.group2__top__title{
+ font-size: 30px;
+ color: #333333;
+ margin-left: 8px;
+ margin-right: 20px;
+ font-weight: bold;
+ }
+.group2__list{
+    margin-top: 35px;
+  width: 100%;
+  flex-direction: row;
+}
+.group2__list__item{
+  flex:1;
+  flex-direction: column;
+  align-items: center;
+}
+.group2__list__item__price{
+  font-size: 36px;
+  color: #D80B2A;
+  font-weight: bold;
+}
+.group2__list__item__bottom{
+  flex-direction: row;
+  align-items: center;
+}
+.group2__list__item__bottom__icon{
+  width: 26px;
+  height: 26px;
+  background-color: #666666;
+}
+.group2__list__item__bottom__title{
+  color: #666666;
+  font-size: 22px;
+  margin-left: 10px;
+}
+.group2__list__line{
+    height: 54px;
+    width: 2px;
+    height: 54px;
+    background-color: #E8E8E8;
+}
+.cell{
+     margin-top: 20px;
+    width: 686px;
+    height: 100px;
+    align-items: center;
+     background-color: white;
+    border-radius: 10px;
+}
+.cell__title{
+    color: #333333;
+    font-size: 30px;
+    margin-left: 30px;
+}
 
 </style>

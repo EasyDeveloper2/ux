@@ -5,6 +5,30 @@
   "versionCode": "1",
   "minPlatformVersion": "1020",
   "icon": "/Common/logo.png",
+  "router": {
+    "entry": "pages/saleOrderList",
+    "pages": {
+      "pages/index": {
+        "component": "index"
+      },
+      "pages/login": {
+        "component": "login"
+      },
+      "pages/phoneLogin": {
+        "component": "phoneLogin"
+      },
+      "pages/search": {
+        "component": "search"
+      },
+      "pages/me": {
+        "component": "me"
+      },
+      "pages/saleOrderList": {
+        "component": "saleOrderList"
+      }
+    },
+    "widgets": {}
+  },
   "features": [
     {
       "name": "service.wxaccount",
@@ -48,35 +72,29 @@
     "logLevel": "debug",
     "debug": true
   },
-  "router": {
-    "entry": "pages/login",
-    "pages": {
-      "pages/index": {
-        "component": "index"
-      },
-      "pages/login": {
-        "component": "login"
-      },
-      "pages/phoneLogin": {
-        "component": "phoneLogin"
-      }
-    },
-    "widgets": {}
-  },
   "display": {
     "titleBarBackgroundColor": "#f2f2f2",
     "titleBarTextColor": "#414141",
     "menu": true,
     "pages": {
-      "Demo": {
-        "titleBarText": "示例页",
+      "pages/phoneLogin": {
+        "titleBarText": "绑定手机",
         "menu": false
       },
-      "DemoDetail": {
-        "titleBarText": "详情页"
+      "pages/login": {
+        "titleBarText": "登录"
       },
-      "About": {
+      "pages/search": {
+        "titleBarText": "搜索",
         "menu": false
+      },
+      "pages/me": {
+        "titleBarText": "掌柜中心",
+        "menu": true
+      },
+      "pages/saleOrderList": {
+        "titleBarText": "我的销售单",
+        "menu": true
       }
     }
   }

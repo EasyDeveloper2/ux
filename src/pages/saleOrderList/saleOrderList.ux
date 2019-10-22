@@ -1,13 +1,130 @@
 <template>
-    
+    <div class="page">
+        <tabs index="{{tabActiveIndex}}" onchange="onTabChange">
+            <tab-bar>
+            <div class="tabs-item"  for="{{tabs}}">
+                <text class="tabs-item__title {{tabActiveIndex==$idx?'tabs-item--active':''}}">{{$item.name}}</text>
+            </div>
+            </tab-bar>
+            <tab-content scrollable="true">
+                <div class="content">
+                    <div class="income-wrap">
+                        <text class="income-wrap__text">可结算佣金总计:</text>
+                        <text class="income-wrap__price">100.90</text>
+                        <text class="income-wrap__unit">元</text>
+                    </div>
+                    <div class="list">
+                        <div class="list-item">
+                            <div class="list-item__header">
+                                <text class="list-item__phone">1881****3333</text>
+                                <text class="list-item__date">2019-03-23</text>
+                                <text class="list-item__status">待付款</text>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content"></div>
+                <div class="content"></div>
+                <div class="content"></div>
+            </tab-content>
+        </tabs>
+    </div>
 </template>
 
 <script>
 export default {
-
+    private: {
+        tabs: [
+            { id: "", name: "可结算" },
+            { id: "", name: "待结算" },
+            { id: "", name: "不结算" },
+            { id: "", name: "全部" }
+        ],
+        tabActiveIndex:0
+    },
+    onTabChange(e){
+        console.log(e)
+        this.tabActiveIndex = e.index
+    }
 }
 </script>
 
 <style>
+    .page{
+        background-color: #f7f7f7;
+    }
+    .tabs-item{
+        flex-direction: column;
+        align-content: center;
+    }
+    .tabs-item__title{
+        font-size: 28px;
+        color: #333333;
+        
+    }
+    .tabs-item--active{
+        color: red;
+    }
+    .tabs-item__line{
+        bottom: 0;
+        width: 88px;
+        height: 4px;
+        background-color: #D70A2A;
+    }
 
+    .content{
+      flex-direction: column;
+      align-items: center;
+    }
+    .income-wrap{
+        width: 100%;
+        height: 80px;
+        align-items: center;
+        background-color: #FEFCEB;
+    }
+    .income-wrap__text{
+       margin-left: 30px;
+       font-size: 24px;
+       color: #333333;
+    }
+    .income-wrap__price{
+      color: #D70A2A;
+      font-size: 24px;
+      margin-left: 10px;
+    }
+    .income-wrap__unit{
+    margin-left: 10px;
+    color: #333;
+    font-size: 24px;
+    }
+    .list{
+        width: 686px;
+        background-color: white;
+        margin-top: 16px;
+    }
+    .list-item{
+        width: 100%;
+        flex-direction: column;
+        
+    }
+    .list-item__header{
+        height: 100px;
+        display: flex;
+        align-items: center;
+    }
+    .list-item__phone{
+     margin-left: 30px;
+     color: #333333;
+     font-size: 28px;
+    }
+    .list-item__date{
+     margin-left: 30px;
+     color: #999999;
+     flex:1;
+    }
+    .list-item__status{
+      color: #D80B2A;
+      font-size: 28px;
+    }
+   
 </style>

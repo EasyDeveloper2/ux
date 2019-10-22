@@ -3,9 +3,14 @@
 * 应用级别的配置，供所有页面公用
 */
 import util from './util'
+import router from '@system.router'
+import prompt from '@system.prompt'
 
 export default {
   showMenu: util.showMenu,
-  createShortcut: util.createShortcut
+  createShortcut: util.createShortcut,
+  router:router,
+  prompt:prompt
 }
 </script>
+
