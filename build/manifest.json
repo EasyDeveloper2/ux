@@ -6,8 +6,11 @@
   "minPlatformVersion": "1020",
   "icon": "/Common/logo.png",
   "router": {
-    "entry": "pages/saleOrderList",
+    "entry": "pages/goodsDetail",
     "pages": {
+      "pages/main": {
+        "component": "main"
+      },
       "pages/index": {
         "component": "index"
       },
@@ -25,6 +28,12 @@
       },
       "pages/saleOrderList": {
         "component": "saleOrderList"
+      },
+      "pages/commissionList": {
+        "component": "commissionList"
+      },
+      "pages/goodsDetail": {
+        "component": "goodsDetail"
       }
     },
     "widgets": {}
@@ -94,6 +103,14 @@
       },
       "pages/saleOrderList": {
         "titleBarText": "我的销售单",
+        "menu": true
+      },
+      "pages/commissionList": {
+        "titleBarText": "佣金记录",
+        "menu": true
+      },
+      "pages/goodsDetail": {
+        "titleBarText": "商品详情",
         "menu": true
       }
     }

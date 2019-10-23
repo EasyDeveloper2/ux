@@ -20,6 +20,27 @@
                                 <text class="list-item__date">2019-03-23</text>
                                 <text class="list-item__status">待付款</text>
                             </div>
+
+                            <div class="list-item__goods-list">
+                                <div class="list-item__goods">
+                                    <img class="list-item__goods__img" src="" alt="" />
+                                    <div class="list-item__goods__middle">
+                                        <text class="list-item__goods__middle__title">Miss candy粉底液粉底液…</text>
+                                        <text class="list-item__goods__middle__specification">化妆品净含量化妆品净含量化妆品净含量:30ml;</text>
+                                    </div>
+                                    <div class="list-item__goods__right">
+                                    <text class="list-item__goods__right__price">¥245</text>
+                                    <text class="list-item__goods__right__num">x1</text>
+                                </div>
+                                </div>
+                                <div class="list-item__goods__line"></div>
+                            </div>
+                            <div class="list-item__footer">
+                                <text class="list-item__footer__title">赚佣金:¥13.23</text>
+                                <text class="list-item__footer__desc">合计：</text>
+                                <text class="list-item__footer__price">¥123</text>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -125,6 +146,78 @@ export default {
     .list-item__status{
       color: #D80B2A;
       font-size: 28px;
+      margin-right: 30px;
+    }
+    .list-item__goods-list{
+     width: 100%;
+     flex-direction: column;
+    }
+    .list-item__goods{
+       height: 219px;
+       width: 100%;
+    }
+    .list-item__goods__line{
+        width: 622px;
+        border-bottom: 1px dotted #E8E8E8;
+        margin-left: 30px;
+    }
+    .list-item__goods__img{
+       width: 160px;
+       height: 160px;
+       margin-left: 30px;
+       background-color: #eee;
+    }
+    .list-item__goods__middle{
+      flex-direction: column;
+      width: 308px;
+      margin-left: 18px;
+    }
+    .list-item__goods__middle__title{
+      font-size: 24px;
+      color: #333333;
+    }
+    .list-item__goods__middle__specification{
+      margin-top: 18px;
+      color: #999999;
+      font-size: 22px;
+
+    }
+    .list-item__goods__right{
+      flex-direction: column;
+      flex:1;
+      align-items: flex-end;
+      margin-right: 30px;
+
+    }
+    .list-item__goods__right__price{
+    color: #D80B2A;
+    font-size: 24px;
+    }
+    .list-item__goods__right__num{
+      margin-top: 83px;
+     font-size: 24px;
+     color: #999999;
+    }
+    .list-item__footer{
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    align-items: center;
+    }
+    .list-item__footer__title{
+     color: #D80B2A;
+     font-size: 28px;
+     flex:1;
+     margin-left: 20px;
+    }
+    .list-item__footer__desc{
+      font-size: 28px;
+      color: #999999;
+    }
+    .list-item__footer__price{
+     font-size: 28px;
+     color: #333333;
+     margin-right: 20px;
     }
    
 </style>

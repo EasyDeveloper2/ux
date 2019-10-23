@@ -1,0 +1,57 @@
+<import name="Index" src="../index/index"></import>
+ <import name="Me" src="../me/me"></import>
+<template>
+    <div class="page">
+        <tabs onchange="onChangePage" index="{{index}}">
+            <tab-content >
+              <Index /> 
+              <Me />
+            </tab-content>
+         <tab-bar>
+             <div class="tab-item">
+                 <img class="tab-item__icon" src="" alt="">
+                 <text class="tab-item__name {{index==0?'tab-item__name--active':''}}">首页</text>
+             </div>
+             <div class="tab-item">
+                 <img class="tab-item__icon" src="" alt="">
+                 <text class="tab-item__name  {{index==1?'tab-item__name--active':''}}">我的</text>
+             </div>
+         </tab-bar>
+        <tabs>   
+    </div>
+    
+</template>
+
+<script>
+  
+export default {
+ private: {
+     index:0
+ },
+ onChangePage(e){
+     this.index = e.index
+ }
+}
+</script>
+
+<style scoped>
+    @import '../../Common/css/global.css';
+    .tab-item{
+        flex-direction: column;
+        align-items: center;
+    }
+    .tab-item__icon{
+      width: 40px;
+      height: 40px;
+      background-color: red;
+    }
+    .tab-item__name{
+        margin-top: 11px;
+        font-size: 20px;
+        color: #CBCBCB;
+    }
+    .tab-item__name--active{
+        color: red;
+    }
+
+</style>
