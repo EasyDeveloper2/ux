@@ -6,7 +6,7 @@
   "minPlatformVersion": "1020",
   "icon": "/Common/logo.png",
   "router": {
-    "entry": "pages/saleOrderList",
+    "entry": "pages/index",
     "pages": {
       "pages/index": {
         "component": "index"

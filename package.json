@@ -23,6 +23,7 @@
     "@babel/core": "^7.6.4",
     "@babel/plugin-transform-modules-commonjs": "^7.6.0",
     "@babel/preset-env": "^7.6.3",
-    "babel-loader": "^8.0.6"
+    "babel-loader": "^8.0.6",
+    "sass-loader": "^8.0.0"
   }
 }
