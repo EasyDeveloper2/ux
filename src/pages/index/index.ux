@@ -1,243 +1,263 @@
 <template>
-  <div class="doc-page">
-    <div class="page-title-wrap">
-      <text class="page-title">{{componentName}}</text>
+  <div class="mainPage flex">
+    <!-- 搜索区域 -->
+    <div class="header">
+      <div class="header-search">
+        <input type="text" placeholder="输入你想销售的商品关键字" class="header-search-text"></input>
+      </div>
     </div>
 
-    <div class="switch-content">
-      <text class="item-content-title">滑动切换页面</text>
-      <switch class="switch" checked="true" onchange="switchScrollable"></switch>
+    <!-- 内容部分 -->
+    <div class="content flex">
+      <div class="content-imgs flex">
+        <image src="" style="width:750px;height:900px;background-color:#7fffd4;"></image>
+        <image src="" style="width:750px;height:900px;background-color:lightblue;"></image>
+        <image src="" style="width:750px;height:120px;background-color:lightgreen;"></image>
+      </div>
+      <div class="content-goodsTop flex">
+        <div class="content-goodsTop-info">
+          <div class="content-goodsTop-info-left">
+            <image src="" style="width:210px;height:210px;background-color:#8a2be2;margin:22px 24px;"></image>
+          </div>
+          <div class="content-goodsTop-info-right flex">
+            <div>
+              <text class="content-goodsTop-info-text">Miss candy指甲油指甲油指甲油指甲油</text>
+            </div>
+            <div class="content-goodsTop-price">
+              <text class="primaryPrice">￥87.00</text><text class="commissionPrice">佣金:￥122</text>
+            </div>
+            <div class="content-goodsTop-promote row">
+              <text style="height:30px;width:30px;background-color:red;"></text>
+              <text class="recommend">999人推荐</text>
+              <text class="shareBtn">分享赚钱</text>
+            </div>
+          </div>
+        </div>
+        <div class="content-goodsTop-info">
+          <div class="content-goodsTop-info-left">
+            <image src="" style="width:210px;height:210px;background-color:#8a2be2;margin:22px 24px;"></image>
+          </div>
+          <div class="content-goodsTop-info-right flex">
+            <div>
+              <text class="content-goodsTop-info-text">Miss candy指甲油指甲油指甲油指甲油</text>
+            </div>
+            <div class="content-goodsTop-price">
+              <text class="primaryPrice">￥87.00</text><text class="commissionPrice">佣金:￥122</text>
+            </div>
+            <div class="content-goodsTop-promote row">
+              <text style="height:30px;width:30px;background-color:red;"></text>
+              <text class="recommend">999人推荐</text>
+              <text class="shareBtn">分享赚钱</text>
+            </div>
+          </div>
+        </div>
+        <div class="content-goodsTop-info">
+          <div class="content-goodsTop-info-left">
+            <image src="" style="width:210px;height:210px;background-color:#8a2be2;margin:22px 24px;"></image>
+          </div>
+          <div class="content-goodsTop-info-right flex">
+            <div>
+              <text class="content-goodsTop-info-text">Miss candy指甲油指甲油指甲油指甲油</text>
+            </div>
+            <div class="content-goodsTop-price">
+              <text class="primaryPrice">￥87.00</text><text class="commissionPrice">佣金:￥122</text>
+            </div>
+            <div class="content-goodsTop-promote row">
+              <text style="height:30px;width:30px;background-color:red;"></text>
+              <text class="recommend">999人推荐</text>
+              <text class="shareBtn">分享赚钱</text>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--专区  -->
+      <div class="content-zone flex">
+        <div class="content-imgs flex">
+          <image src="" style="width:750px;height:210px;background-color:lightblue;"></image>
+          <image src="" style="width:750px;height:300px;background-color:lightgreen;"></image>
+        </div>
+        <div class="content-goodsList row">
+          <div class="content-goodsList-info flex">
+            <image src="" style="width:337px;height:337px;background-color:#a52a2a;"></image>
+            <div class="content-goodsList-info-area flex">
+              <text style="font-size:28px;line-height:37px;color:#333;">雪花秀雨润徐虎睡眠面膜中样 15ml</text>
+              <div class="content-goodsList-info-price row">
+                <text style="font-size:24px;color:#D80B2A;font-weight:600;line-height:33px;">佣金:￥300</text>
+                <text style="font-size:24px;color:#999;">已售299件</text>
+              </div>
+              <text class="content-goodsList-info-share">分享赚钱</text>
+            </div>
+          </div>
+          <div class="content-goodsList-info flex">
+            <image src="" style="width:337px;height:337px;background-color:#a52a2a;"></image>
+            <div class="content-goodsList-info-area flex">
+              <text style="font-size:28px;line-height:37px;color:#333;">雪花秀雨润徐虎睡眠面膜中样 15ml</text>
+              <div class="content-goodsList-info-price row">
+                <text style="font-size:24px;color:#D80B2A;font-weight:600;line-height:33px;">佣金:￥300</text>
+                <text style="font-size:24px;color:#999;">已售299件</text>
+              </div>
+              <text class="content-goodsList-info-share">分享赚钱</text>
+            </div>
+          </div>
+          <div class="content-goodsList-info flex">
+            <image src="" style="width:337px;height:337px;background-color:#a52a2a;"></image>
+            <div class="content-goodsList-info-area flex">
+              <text style="font-size:28px;line-height:37px;color:#333;">雪花秀雨润徐虎睡眠面膜中样 15ml</text>
+              <div class="content-goodsList-info-price row">
+                <text style="font-size:24px;color:#D80B2A;font-weight:600;line-height:33px;">佣金:￥300</text>
+                <text style="font-size:24px;color:#999;">已售299件</text>
+              </div>
+              <text class="content-goodsList-info-share">分享赚钱</text>
+            </div>
+          </div>
+          <div class="content-goodsList-info flex">
+            <image src="" style="width:337px;height:337px;background-color:#a52a2a;"></image>
+            <div class="content-goodsList-info-area flex">
+              <text style="font-size:28px;line-height:37px;color:#333;">雪花秀雨润徐虎睡眠面膜中样 15ml</text>
+              <div class="content-goodsList-info-price row">
+                <text style="font-size:24px;color:#D80B2A;font-weight:600;line-height:33px;">佣金:￥300</text>
+                <text style="font-size:24px;color:#999;">已售299件</text>
+              </div>
+              <text class="content-goodsList-info-share">分享赚钱</text>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <!--tab组件-->
-    <tabs class="tabs" onchange="changeTabactive" index="2">
-      <tab-bar class="tab-bar">
-        <text class="tab-text">基础组件</text>
-        <text class="tab-text">表单组件</text>
-        <text class="tab-text">列表组件</text>
-      </tab-bar>
-
-      <tab-content class="tab-content" scrollable="{{scrollable}}">
-        <!--基础组件-->
-        <div class="item-container">
-          <div class="item-content">
-            <text class="item-title item-title-first">a</text>
-            <a style="color: #09ba07;" href="https://www.quickapp.cn/">链接示例</a>
-          </div>
-
-          <div class="item-content">
-            <text class="item-title">image</text>
-            <!-- <image src="pic.webp" class="image"></image> -->
-          </div>
-
-          <div class="item-content">
-            <text class="item-title">progerss type="horizontal"</text>
-            <progress percent="20" style="margin-top: 20px;color: #0faeff;stroke-width: 10px;"></progress>
-          </div>
-
-          <div class="item-content">
-            <text class="item-title">progerss type="circular"</text>
-            <progress class="circular" type="circular" style="margin-top: 20px;color: #A020F0;"></progress>
-          </div>
-
-          <div class="item-content">
-            <text class="item-title">text</text>
-            <text style="color: #f76160">I am text</text>
-          </div>
-
-          <div class="item-content">
-            <text class="item-title">span</text>
-            <text>
-              <span style="color: #09ba07">I am span</span>
-            </text>
-          </div>
-        </div>
-
-        <!--表单组件-->
-        <div class="item-container">
-          <div class="item-content">
-            <text class="item-title item-title-first">input</text>
-            <input class="item-input" type="text" placeholder="I am input"/>
-          </div>
-
-          <div class="item-content">
-            <text class="item-title">picker</text>
-            <picker class="item-picker" type="time" value="{{time}}" onchange="setTime"></picker>
-          </div>
-
-          <div class="item-content">
-            <text class="item-title">slider</text>
-            <slider class="item-slider" style="selected-color: #0faeff;" min="50" max="200" value="100"></slider>
-          </div>
-        </div>
-
-        <!--列表组件-->
-        <div class="item-container">
-          <input type="button" class="btn" name="" value="切换滚动模式" onclick="switchScrollMode"/>
-          <input type="button" class="btn" name="" value="回到第一个item" onclick="goIndex"/>
-          <list class="list" onscrollbottom="scrollbottom" id="list" scrollpage="{{scrollPage}}">
-            <list-item type="listItem" class="item item_color" for="{{listData}}">
-              <text class="txt">{{$item.name}}--{{$idx}}</text>
-            </list-item>
-            <list-item type="loadMore" class="load-more" if="{{loadMore}}">
-              <progress type="circular"></progress>
-              <text>加载更多</text>
-            </list-item>
-          </list>
-        </div>
-      </tab-content>
-    </tabs>
   </div>
 </template>
 
 <script>
-  export default {
-    private: {
-      componentName: 'tabs',
-      time: '',
-      loadMore: true,
-      scrollPage: false,
-      scrollable: true,
-      listData: [
-        { name: 'A' },
-        { name: 'B' },
-        { name: 'C' },
-        { name: 'D' }
-      ]
-    },
-    onInit () {
-      this.$page.setTitleBar({text: 'Tabs'})
-      // 初始化time
-      this.time = new Date().getHours() + ':' + new Date().getMinutes()
-    },
-    changeTabactive (e) {
-      // 切换tab
-      console.info('切换tab: ' + e.index)
-    },
-    setTime (e) {
-      // time picker选择值后设置time
-      this.time = e.hour + ':' + e.minute
-    },
-    scrollbottom () {
-      const self = this
-      // list滚动到底部事件
-      setTimeout(function () {
-        self.listData = self.listData.concat([{name: 'A'}, {name: 'B'}, {name: 'C'}, {name: 'D'}])
-      }, 1000)
-    },
-    goIndex () {
-      // list滚动到指定index位置
-      this.$element('list').scrollTo({index: 0, smooth: true})
-    },
-    switchScrollMode () {
-      // 切换滚动模式
-      this.goIndex()
-      this.scrollPage = !this.scrollPage
-    },
-    switchScrollable (e) {
-      // 设置是否可以通过用户滑动切换页面
-      this.scrollable = e.checked
-    }
+export default {
+  data: {
+
   }
+}
 </script>
 
-<style>
-  @import '../../../common/css/common.css';
+<style scoped>
+.flex {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+.mainPage {
+  width: 750px;
+  background-color: #f7f7f7;
+}
+.header {
+  padding: 20px 32px;
+}
+.header-search {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 80px;
+  width: 686px;
+  border-radius: 40px;
+  background-color: #fff;
+}
+.header-search-text {
+  width: 600px;
+  /* background-color: red; */
+}
+/*内容部分*/
+.content {
+  width: 750px;
+}
+.content .content-goodsTop {
+  padding: 20px;
+}
+.content-goodsTop-info {
+  width: 100%;
+  height: 254px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  background-color: #fff;
+}
+.content-goodsTop-info-right {
+  padding: 24px 0;
+}
+.content-goodsTop-info-text {
+  width: 300px;
+  height: 84px;
+  font-size: 28px;
+  font-weight: 600;
+  color: rgba(51, 51, 51, 1);
+  line-height: 42px;
+}
+.content-goodsList {
+  width: 750px;
+  padding: 24px;
+  flex-wrap: wrap;
+  background-color: red;
+}
+.content-goodsList-info {
+  width: 346px;
+  margin: 10px 0;
+  padding: 5px;
+  height: 588px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+.content-goodsTop-price {
+  padding-top: 30px;
+}
+.primaryPrice {
+  font-size: 28px;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 28px;
+}
+.commissionPrice {
+  font-size: 28px;
+  font-weight: 600;
+  color: rgba(220, 16, 47, 1);
+  line-height: 28px;
+  margin-left: 10px;
+}
+.content-goodsTop-promote {
+  align-items: flex-end;
+  padding-top: 10px;
+}
+.recommend {
+  color: #666;
+  font-size: 24px;
+  margin-left: 5px;
+}
+.shareBtn {
+  text-align: center;
+  color: #fff;
+  font-size: 24px;
+  width: 167px;
+  height: 56px;
+  background: linear-gradient(360deg,rgba(216, 11, 42, 1) 0%,rgba(248, 50, 78, 1) 100%);
+  border-radius: 28px;
+  margin-left: 110px;
+}
 
-  .tabs {
-    flex: 1;
-    margin-top: 20px;
-    margin-right: 30px;
-    margin-left: 30px;
-    background-color: #ffffff;
-  }
-  .tab-content {
-    flex: 1;
-  }
-  .tab-bar {
-    height: 100px;
-    border-color: #bbbbbb;
-    color: #bbbbbb;
-    border-bottom-width: 1px;
-  }
-  .tab-text {
-    text-align: center;
-  }
-  .tab-text:active {
-    color: #f76160;
-  }
-  .item-container {
-    padding-top: 30px;
-    padding-left: 30px;
-    padding-right: 30px;
-    flex-direction: column;
-  }
-  .item-content {
-    flex-direction: column;
-    padding-bottom: 30px;
-  }
-  .item-title {
-    padding-top: 50px;
-    padding-bottom: 20px;
-    color: #aaaaaa;
-  }
-  .item-title-first {
-    padding-top: 0px;
-  }
-  .item-input {
-    height: 80px;
-    margin-right: 60px;
-    margin-left: 60px;
-    padding: 20px;
-    border-width: 1px;
-    border-color: #bbbbbb;
-    border-radius: 5px;
-    font-size: 30px;
-  }
-  .item-picker {
-    margin-right: 60px;
-    margin-left: 60px;
-    padding: 20px;
-    border-width: 1px;
-    border-color: #bbbbbb;
-    border-radius: 5px;
-  }
-  .item-slider {
-    padding: 20px;
-  }
-  .circular {
-    width: 40px;
-    height: 40px;
-  }
-  .list {
-    flex: 1;
-  }
-  .load-more {
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-  }
-  .item {
-    height: 150px;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 15px;
-  }
-  .item_color {
-    background-color: #f76160;
-  }
-  .switch-content {
-    flex-direction: row;
-    margin-left: 30px;
-    margin-right: 30px;
-  }
-  .item-content-title {
-    flex: 1;
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-  .switch {
-    height: 50px;
-    width: 320px;
-  }
+/* 专区 */
+.content-goodsList-info-area{
+  padding: 8px 27px;
+}
+.content-goodsList-info-price{
+  padding: 20px 0;
+}
+.content-goodsList-info-share{
+  width:298px;
+  height:71px;
+  line-height: 71px;
+  text-align: center;
+  background:linear-gradient(360deg,rgba(216,11,42,1) 0%,rgba(248,50,78,1) 100%);
+  border-radius:35px;
+  color: #ffffff;
+  font-weight:600;
+}
 </style>
+
