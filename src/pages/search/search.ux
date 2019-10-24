@@ -15,7 +15,7 @@
                <text class="list-item__footer__earn-price">佣金￥300</text>
                <text class="list-item__sale-price">已售566件</text>
            </div>
-           <button class="list-item__btn" @click="onShare"><text class="list-item__btn__text">分享</text></button>
+           <div class="list-item__btn" @click="onShare"><text class="list-item__btn__text">分享</text></div>
        </div>
      </div>
 

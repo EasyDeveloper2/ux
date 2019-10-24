@@ -2,8 +2,8 @@
   <div class="mainPage flex">
     <!-- 搜索区域 -->
     <div class="header">
-      <div class="header-search">
-        <input type="text" placeholder="输入你想销售的商品关键字" class="header-search-text"></input>
+      <div class="header-search" @click="onPushToSearch">
+        <text>输入你想销售的商品关键字</text>
       </div>
     </div>
 
@@ -144,6 +144,11 @@ export default {
     private: {
       groups: []
     },
+    onPushToSearch(){
+       this.$app.$def.router.push({
+         uri:"/pages/search"
+       })
+    },
     onPushToGoodsDetail(e) {
       this.$app.$def.router.push({
         uri: "/pages/goodsDetail",
@@ -151,17 +156,14 @@ export default {
       })
     },
     onShare(e) {
-    this.handleShare("xxx")
-    },
-    handleShare(url){
-        this.$app.$def.share.share({
-        type: 'text/html',
+     this.$app.$def.share.share({
+        type: 'text/html',
         data: '<b>bold</b>',
         success: function (data) {
           console.log('handling success')
         },
         fail: function (data, code) {
-         
+          console.log(`handling fail, code = ${code}`)
         }
       })
     }

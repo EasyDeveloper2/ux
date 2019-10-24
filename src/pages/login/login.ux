@@ -1,6 +1,6 @@
 <template>
     <div class="page">
-        <img src="" alt="" class="icon">
+        <img src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kmh/yundian/icon.png" alt="" class="icon">
         <text class="title">钱多赚一点，生活好一点！</text>
         <div class="btn-login-container">
 

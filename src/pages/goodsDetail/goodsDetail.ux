@@ -10,7 +10,7 @@
         <div class="goodsInfo-title flex_r">
           <text class="goodsInfo-title-goodsName">丝凯露-D(SCALP-D)日本进口】发士女士组合无硅油控油去屑…</text>
           <div class="goodsInfo-title-share flex_c">
-            <image src="" style="width:45px;height:45px;background-color:red;"></image>
+            <image src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kmh/yundian/fenxiang.png" style="width:45px;height:45px;"></image>
             <text style="font-size:20px;color:#666;line-height:28px;text-align:center;margin-top:6px;">分享</text>
           </div>
         </div>
@@ -53,13 +53,13 @@
           <text>产地：德国</text>
           <text>规则：300ml</text>
         </div>
-        <div class="goodsDetail-sevice flex_c">
-          <text></text>
-          <text></text>
-        </div>
+       
       </div>
     </div>
-
+ <div class="goodsDetail-sevice flex_c">
+          <image src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kmh/yundian/goods_detail_kefu.png"></image>
+          <image src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kmh/yundian/goods_detail_to_top.png"></image>
+        </div>
   </div>
 </template>
 
@@ -171,11 +171,16 @@ export default {
   height: 40px;
   margin: 10px 0;
 }
-.goodsDetail-sevice text{
+.goodsDetail-sevice{
+  position:fixed;
+  right: 32px;
+  bottom: 138px;
+  width: 88px;
+}
+.goodsDetail-sevice image{
   width: 88px;
   height: 88px;
   border-radius: 44px;
-  background-color:#FFEFEB;
   margin-bottom: 15px;
 }
 </style>

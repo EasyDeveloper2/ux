@@ -3,22 +3,22 @@
         <text class="top-tip">首次使用微信登录，需要绑定手机号码，以后就不需要了</text>
        <!-- 输入手机号码 -->
         <div class="cell">
-            <img class="cell__icon" />
+            <image class="cell__icon" src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kmh/yundian/shoujihao.png"></image>
             <input class="cell__input" type="number" placeholder="请输入登录手机号码"></input>
         </div>
         <!-- 获取验证码 -->
          <div class="cell">
-            <img class="cell__icon" />
+            <image class="cell__icon" src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kmh/yundian/yanzhengma.png"></image>
             <input class="cell__input" type="number" placeholder="请输入验证码码"></input>
-            <button class="cell__btn"><text>获取验证码</text></button>
+            <div class="cell__btn"><text>获取验证码</text></div>
         </div>
         <div class="warn">
-            <img class="warn__icon" />
+            <image class="warn__icon" src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kmh/yundian/cuowu.png"></image>
             <text class="warn__text">手机号或验证码错误,请重试</text>
         </div>
-        <button class="btn-bind" @click="onBindPhone">
+        <div class="btn-bind" @click="onBindPhone">
             <text class="btn-bind__text">绑 定</text>
-        </button>
+        </div>
     </div>
 </template>
 
@@ -26,9 +26,8 @@
     
 export default {
    onBindPhone(){
-
-       this.$app.$def.router.push({
-            uri: '/pages/search'
+       this.$app.$def.router.replace({
+            uri: '/pages/main'
        })
    }
 }
@@ -38,7 +37,7 @@ export default {
 .page{
  background-color: #F6F6F6;
  flex-direction: column;
- align-content: center;
+ align-items: center;
 }
 .top-tip{
   width: 100%;
