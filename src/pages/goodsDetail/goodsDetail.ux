@@ -1,14 +1,66 @@
 <template>
-    <div class="page">
-     <div class="swiper-container">
-        <swiper class="swiper"  indicator="{{true}}" duration="{{durationValue}}" vertical="{{isVertical}}" previousmargin="{{marginValue}}" nextmargin="{{marginValue}}" loop="{{loopPlay}}" style="indicatorTop: {{topValue}}">
-          <image src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kshop-pro-data_a2e464838418427b813c90b19e4630ef.png"></image>
-          <image src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kshop-pro-data_e7feb87b777c482f879c251a4a483c90.png"></image>
-          <image src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kshop-pro-data_a2e464838418427b813c90b19e4630ef.png"></image>
-        </swiper>
+  <div class="page flex_c">
+    <div class="swiper-container flex_c">
+      <swiper class="swiper" indicator="{{true}}" duration="{{durationValue}}" vertical="{{isVertical}}" previousmargin="{{marginValue}}" nextmargin="{{marginValue}}" loop="{{loopPlay}}" style="indicatorTop: {{topValue}}">
+        <image src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kshop-pro-data_a2e464838418427b813c90b19e4630ef.png"></image>
+        <image src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kshop-pro-data_e7feb87b777c482f879c251a4a483c90.png"></image>
+        <image src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kshop-pro-data_a2e464838418427b813c90b19e4630ef.png"></image>
+      </swiper>
+      <div class="goodsInfo flex_c">
+        <div class="goodsInfo-title flex_r">
+          <text class="goodsInfo-title-goodsName">丝凯露-D(SCALP-D)日本进口】发士女士组合无硅油控油去屑…</text>
+          <div class="goodsInfo-title-share flex_c">
+            <image src="" style="width:45px;height:45px;background-color:red;"></image>
+            <text style="font-size:20px;color:#666;line-height:28px;text-align:center;margin-top:6px;">分享</text>
+          </div>
+        </div>
+        <div class="goodsInfo-price flex_r">
+          <text style="font-size:28px;color:#D80B2A;padding:0 5px 5px 0;">￥</text><text style="font-size:48px;color:#D80B2A;">69.00</text><text style="font-size:24px;color:#999;padding:0 0 8px 12px;text-decoration:line-through;">￥79</text>
+        </div>
+        <div class="goodsInfo-num flex_r">
+          <text style="color:#D80B2A">佣金:￥3.45</text>
+          <text>销量:9899</text>
+          <text>库存:666</text>
+        </div>
       </div>
-
     </div>
+
+    <div class="goodsInfo-buy flex_r">
+      <text>放心购</text>
+      <div class="goodsInfo-buy-promise">
+        <text>正品保障</text>
+        <text>假一赔十</text>
+      </div>
+    </div>
+    <div class="goodsFeatures flex_c">
+      <text class="goodsFeatures-title">商品特性</text>
+      <div class="goodsFeatures-list flex_r">
+        <text>控油</text>
+        <text>控油</text>
+        <text>控油</text>
+        <text>控油</text>
+        <text>控油</text>
+        <text>控油</text>
+        <text>控油</text>
+        <text>控油</text>
+      </div>
+    </div>
+    <div class="goodsDetail flex_c">
+      <text class="goodsDetail-title">图文详情</text>
+      <div class="goodsDetail-info laflex_r">
+        <div class="goodsDetail-list flex_c">
+          <text>品名：迪奥口红劲炫套餐</text>
+          <text>产地：德国</text>
+          <text>规则：300ml</text>
+        </div>
+        <div class="goodsDetail-sevice flex_c">
+          <text></text>
+          <text></text>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </template>
 
 <script>
@@ -17,12 +69,113 @@ export default {
 }
 </script>
 
-<style>
-.page{
+<style scoped>
+.flex {
+  flex: 1;
+}
+.flex_c {
+  display: flex;
   flex-direction: column;
 }
-.swiper{
+.flex_r {
+  display: flex;
+  flex-direction: row;
+}
+.font_c {
+  color: #d80b2a;
+}
+.page {
+  background-color: #f7f7f7;
+}
+.swiper-container {
+  background-color: #fff;
+}
+.swiper {
   width: 100%;
   height: 750px;
+}
+
+/* 分享 */
+.goodsInfo {
+  padding: 32px;
+}
+.goodsInfo-title{
+  justify-content: space-between;
+}
+.goodsInfo-title-goodsName {
+  width: 578px;
+  height: 90px;
+  font-size: 32px;
+  font-weight: 500;
+  color: rgba(51, 51, 51, 1);
+  line-height: 45px;
+}
+.goodsInfo-price {
+  align-items: flex-end;
+  padding: 20px 0;
+}
+.goodsInfo-num {
+  justify-content: space-between;
+}
+.goodsInfo-num text {
+  color: #999999;
+  font-size: 28px;
+  line-height: 40px;
+}
+.goodsInfo-buy {
+  padding: 0 32px;
+  background-color: #fff;
+  height: 90px;
+  line-height: 90px;
+  margin: 16px 0;
+  justify-content: space-between;
+}
+.goodsInfo-buy-promise text {
+  margin-left: 20px;
+}
+.goodsFeatures,.goodsDetail{
+  padding: 27px 32px;
+  background-color: #fff;
+  margin-bottom: 16px;
+}
+.goodsFeatures-title,
+.goodsDetail-title{
+  color: #333;
+  line-height: 42px;
+  height: 42px;
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 27px;
+}
+.goodsFeatures-list{
+  flex-wrap: wrap;
+}
+.goodsFeatures-list text {
+  color: #4265ff;
+  font-size: 24px;
+  width: 160px;
+  height: 60px;
+  line-height: 60px;
+  background-color: #EFF2FF;
+  border-radius: 30px;
+  text-align: center;
+  margin: 5px;
+}
+.goodsDetail-info{
+  justify-content: space-between;
+}
+.goodsDetail-list text{
+  color: #999;
+  font-size: 28px;
+  line-height: 40px;
+  height: 40px;
+  margin: 10px 0;
+}
+.goodsDetail-sevice text{
+  width: 88px;
+  height: 88px;
+  border-radius: 44px;
+  background-color:#FFEFEB;
+  margin-bottom: 15px;
 }
 </style>
