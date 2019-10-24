@@ -5,7 +5,7 @@
     <div class="page__header__right">
         <div class="page__header__right__top">
          <text class="page__header__right__username">往事随风</text>
-         <img class="page__header__right__icon" src="" alt="">
+         <img class="page__header__right__icon" src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kmh/yundian/shop_vip_icon.png" alt="">
         </div>
         <text class="page__header__right__date">有效期:2019-12-23</text>
     </div>
@@ -21,31 +21,31 @@
  <div class="group2">
      <div class="group2__top">
        <div class="group2__top__line"></div>
-       <img class="group2__top__icon" src="" alt="">
+       <img class="group2__top__icon" src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kmh/yundian/me_history_icon.png" alt="">
        <text class="group2__top__title">历史总佣金情况</text>
        <div class="group2__top__line"></div>
      </div>
      <div class="group2__list">
-         <div class="group2__list__item">
+         <div class="group2__list__item" onclick="onPushToCommissionList">
              <text class="group2__list__item__price">456</text>
              <div class="group2__list__item__bottom">
-                 <img class="group2__list__item__bottom__icon" src="" alt="" />
+                 <img class="group2__list__item__bottom__icon" src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kmh/yundian/yongjin_01.png" alt="" />
                  <text class="group2__list__item__bottom__title">待结算佣金</text>
              </div>
          </div>
          <div class="group2__list__line"></div>
-         <div class="group2__list__item">
+         <div class="group2__list__item" onclick="onPushToCommissionList">
              <text class="group2__list__item__price">456</text>
              <div class="group2__list__item__bottom">
-                 <img class="group2__list__item__bottom__icon" src="" alt="" />
+                 <img class="group2__list__item__bottom__icon" src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kmh/yundian/yongjin_02.png" alt="" />
                  <text class="group2__list__item__bottom__title">已结算佣金</text>
              </div>
          </div>
              <div class="group2__list__line"></div>
-             <div class="group2__list__item">
+             <div class="group2__list__item" onclick="onPushToCommissionList">
              <text class="group2__list__item__price">456</text>
              <div class="group2__list__item__bottom">
-                 <img class="group2__list__item__bottom__icon" src="" alt="" />
+                 <img class="group2__list__item__bottom__icon" src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kmh/yundian/yongjin_03.png" alt="" />
                  <text class="group2__list__item__bottom__title">已失效佣金</text>
              </div>
          </div>
@@ -57,7 +57,7 @@
      <text class="cell__title">
          我的销售单
      </text>
-     <img class="cell__arraw" src="" alt="">
+     <img class="cell__arraw" src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kmh/yundian/fangxiang-you.png" alt="">
  </div>
 </div>
 </template>
@@ -66,7 +66,12 @@
 export default {
   onPushToSaleOrderList(){
       this.$app.$def.router.push({
-            uri: '/pages/saleOrderList'
+          uri: '/pages/saleOrderList'
+      })
+  },
+  onPushToCommissionList(){
+     this.$app.$def.router.push({
+          uri: '/pages/commissionList'
       })
   }
 }
@@ -158,7 +163,6 @@ export default {
     margin-left: 20px;
  width: 34px;
  height: 34px;
- background-color: #D80B2A;
 }
 .group2__top__title{
  font-size: 30px;
@@ -189,7 +193,6 @@ export default {
 .group2__list__item__bottom__icon{
   width: 26px;
   height: 26px;
-  background-color: #666666;
 }
 .group2__list__item__bottom__title{
   color: #666666;
@@ -214,6 +217,12 @@ export default {
     color: #333333;
     font-size: 30px;
     margin-left: 30px;
+    flex:1;
+}
+.cell__arraw{
+  width: 26px;
+  height: 26px;
+  margin-right: 28px;
 }
 
 </style>

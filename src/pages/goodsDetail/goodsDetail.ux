@@ -3,6 +3,8 @@
      <div class="swiper-container">
         <swiper class="swiper"  indicator="{{true}}" duration="{{durationValue}}" vertical="{{isVertical}}" previousmargin="{{marginValue}}" nextmargin="{{marginValue}}" loop="{{loopPlay}}" style="indicatorTop: {{topValue}}">
           <image src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kshop-pro-data_a2e464838418427b813c90b19e4630ef.png"></image>
+          <image src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kshop-pro-data_e7feb87b777c482f879c251a4a483c90.png"></image>
+          <image src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kshop-pro-data_a2e464838418427b813c90b19e4630ef.png"></image>
         </swiper>
       </div>
 

@@ -9,11 +9,13 @@
             </tab-content>
          <tab-bar>
              <div class="tab-item">
-                 <img class="tab-item__icon" src="" alt="">
+                 <image if="{{index==1}}" class="tab-item__icon" src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kmh/yundian/tab_home.png"></image>
+                 <image else class="tab-item__icon" src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kmh/yundian/tab_home_press.png"></image>
                  <text class="tab-item__name {{index==0?'tab-item__name--active':''}}">首页</text>
              </div>
              <div class="tab-item">
-                 <img class="tab-item__icon" src="" alt="">
+                 <image if="{{index==0}}" class="tab-item__icon" src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kmh/yundian/tab_me.png"></image>
+                 <image else class="tab-item__icon" src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kmh/yundian/tab_me_press.png"></image>
                  <text class="tab-item__name  {{index==1?'tab-item__name--active':''}}">我的</text>
              </div>
          </tab-bar>
@@ -36,14 +38,16 @@ export default {
 
 <style scoped>
     @import '../../Common/css/global.css';
+
     .tab-item{
-        flex-direction: column;
-        align-items: center;
+      flex-direction: column;
+      align-items: center;
     }
+
     .tab-item__icon{
       width: 40px;
       height: 40px;
-      background-color: red;
+      color: red;
     }
     .tab-item__name{
         margin-top: 11px;

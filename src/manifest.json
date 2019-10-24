@@ -6,11 +6,8 @@
   "minPlatformVersion": "1020",
   "icon": "/Common/logo.png",
   "router": {
-<<<<<<< HEAD
-    "entry": "pages/goodsDetail",
-=======
-    "entry": "pages/index",
->>>>>>> a0ea76992a9ca7d939224a9be14c32297ce9b359
+    "entry": "pages/main",
+
     "pages": {
       "pages/main":{
         "component":"main"
@@ -115,6 +112,10 @@
     },
     "pages/goodsDetail":{
       "titleBarText": "商品详情",
+      "menu": true
+    },
+    "pages/main":{
+      "titleBarText": "鲲美云店",
       "menu": true
     }
   }

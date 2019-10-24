@@ -1,7 +1,7 @@
 <template>
     <div class="page">
         <div class="cell">
-           <img class="cell__img" src="" alt="">
+           <img class="cell__img" src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kmh/yundian/jichuyongjin.png" alt="">
            <div class="cell__middle">
                <text class="cell__middle__title">基础佣金</text>
                <text class="cell__middle__order">订单号:LV234234234</text>
