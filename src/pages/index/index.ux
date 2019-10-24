@@ -22,7 +22,7 @@
           <div class="content-goodsTop-info-right flex">
             <div>
               <text class="content-goodsTop-info-text">Miss candy指甲油指甲油指甲油指甲油</text>
-              <div  style="flex:1"></div>
+              <div style="flex:1"></div>
               <image src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kmh/yundian/home_top1.png" style="width:63px;height:63px;"></image>
             </div>
             <div class="content-goodsTop-price">
@@ -37,7 +37,6 @@
           </div>
         </div>
       </div>
-
 
       <!--专区  -->
       <div class="content-zone flex">
@@ -72,37 +71,37 @@
         </div>
       </div>
 
-        <!--专区  -->
+      <!--专区  -->
       <div class="content-zone flex">
         <div class="content-imgs flex">
           <image src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kmh/yundian/home_05.png" style="width:750px;height:210px;background-color:lightblue;"></image>
           <image src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kmh/yundian/home_06.png" style="width:750px;height:300px;background-color:lightgreen;"></image>
         </div>
-          <div class="content-goodsTop flex">
-        <div class="content-goodsTop-info">
-          <div class="content-goodsTop-info-left">
-            <image src="" style="width:210px;height:210px;background-color:#8a2be2;margin:22px 24px;"></image>
-          </div>
-          <div class="content-goodsTop-info-right flex">
-            <div>
-              <text class="content-goodsTop-info-text">Miss candy指甲油指甲油指甲油指甲油</text>
-              <div  style="flex:1"></div>
+        <div class="content-goodsTop flex">
+          <div class="content-goodsTop-info">
+            <div class="content-goodsTop-info-left">
+              <image src="" style="width:210px;height:210px;background-color:#8a2be2;margin:22px 24px;"></image>
             </div>
-            <div class="content-goodsTop-price">
-              <text class="primaryPrice">￥87.00</text>
-            </div>
-            <div class="content-goodsTop-promote row">
-               <text class="commissionPrice">佣金:￥</text>
-              <text class="commissionPrice commissionPrice--big">122</text>
-              <text style="flex:1"></text>
-              <text class="shareBtn">分享赚钱</text>
+            <div class="content-goodsTop-info-right flex">
+              <div>
+                <text class="content-goodsTop-info-text">Miss candy指甲油指甲油指甲油指甲油</text>
+                <div style="flex:1"></div>
+              </div>
+              <div class="content-goodsTop-price">
+                <text class="primaryPrice">￥87.00</text>
+              </div>
+              <div class="content-goodsTop-promote row">
+                <text class="commissionPrice">佣金:￥</text>
+                <text class="commissionPrice commissionPrice--big">122</text>
+                <text style="flex:1"></text>
+                <text class="shareBtn">分享赚钱</text>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      </div>
 
-             <!--专区  -->
+      <!--专区  -->
       <div class="content-zone flex">
         <div class="content-imgs flex">
           <image src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kmh/yundian/home_07.png" style="width:750px;height:210px;background-color:lightblue;"></image>
@@ -129,14 +128,12 @@
                 <text style="font-size:24px;color:#D80B2A;font-weight:600;line-height:33px;">佣金:￥300</text>
                 <text style="font-size:24px;color:#999;">已售299件</text>
               </div>
-              <text class="content-goodsList-info-share">分享赚钱</text>
+              <text class="content-goodsList-info-share" @click="onShare">分享赚钱</text>
             </div>
           </div>
         </div>
       </div>
-      
-      
-    
+
     </div>
   </div>
 </template>
@@ -145,16 +142,28 @@
 export default {
   data: {
     private: {
-        groups:[]
+      groups: []
     },
-    onPushToGoodsDetail(e){
-      this.$app.$def.prompt.showToast({
-        message:JSON.stringify(e),
-        duration:10000
+    onPushToGoodsDetail(e) {
+      this.$app.$def.router.push({
+        uri: "/pages/goodsDetail",
+        data: { prodCode: e.target.dataset.prodCode }
       })
-      // this.$app.$def.router.push({
-      //   uri:"/pages/goodsDetail"
-      // })
+    },
+    onShare(e) {
+    this.handleShare("xxx")
+    },
+    handleShare(url){
+        this.$app.$def.share.share({
+        type: 'text/html',
+        data: '<b>bold</b>',
+        success: function (data) {
+          console.log('handling success')
+        },
+        fail: function (data, code) {
+         
+        }
+      })
     }
   }
 }
@@ -247,7 +256,7 @@ export default {
   line-height: 28px;
   margin-left: 0px;
 }
-.commissionPrice--big{
+.commissionPrice--big {
   font-size: 36px;
 }
 .content-goodsTop-promote {
@@ -266,27 +275,36 @@ export default {
   font-size: 24px;
   width: 167px;
   height: 56px;
-  background: linear-gradient(360deg,rgba(216, 11, 42, 1) 0%,rgba(248, 50, 78, 1) 100%);
+  background-color: rgba(220, 16, 47, 1);
+  /* background: linear-gradient(
+    360deg,
+    rgba(216, 11, 42, 1) 0%,
+    rgba(248, 50, 78, 1) 100%
+  ); */
   border-radius: 28px;
-  
 }
 
 /* 专区 */
-.content-goodsList-info-area{
+.content-goodsList-info-area {
   padding: 8px 27px;
 }
-.content-goodsList-info-price{
+.content-goodsList-info-price {
   padding: 20px 0;
 }
-.content-goodsList-info-share{
-  width:298px;
-  height:71px;
+.content-goodsList-info-share {
+  width: 298px;
+  height: 71px;
   line-height: 71px;
   text-align: center;
-  background:linear-gradient(360deg,rgba(216,11,42,1) 0%,rgba(248,50,78,1) 100%);
-  border-radius:35px;
+  background-color: rgba(220, 16, 47, 1);
+  /* background: linear-gradient(
+    360deg,
+    rgba(216, 11, 42, 1) 0%,
+    rgba(248, 50, 78, 1) 100%
+  ) !important; */
+  border-radius: 35px;
   color: #ffffff;
-  font-weight:600;
+  font-weight: 600;
 }
 </style>
 

@@ -5,12 +5,19 @@
 import util from './util'
 import router from '@system.router'
 import prompt from '@system.prompt'
+import share from '@system.share'
+import fetch from '@system.fetch'
+import request from '@system.request'
 
 export default {
   showMenu: util.showMenu,
   createShortcut: util.createShortcut,
   router:router,
-  prompt:prompt
+  prompt:prompt,
+  share,
+  fetch,
+  request
+
 }
 </script>
 
