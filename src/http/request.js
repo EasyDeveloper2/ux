@@ -1,5 +1,5 @@
 import fetch from '@system.fetch'
-import config from '../Common/config/config'
+import config from './../Common/config/config'
 
  let post = (api,params) => {
   return request(config.baseUrl+api,'post',params)
