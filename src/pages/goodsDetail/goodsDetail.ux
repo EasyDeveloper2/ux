@@ -62,7 +62,7 @@
       <image src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kmh/yundian/goods_detail_kefu.png"></image>
       <image src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kmh/yundian/goods_detail_to_top.png"></image>
     </div>
-    <share if="{{isShowShare}}" class="share-code"></share>
+    <share if="{{isShowShare}}" class="share-code" @close="onHideShare"></share>
   </div>
 </template>
 
@@ -74,6 +74,9 @@ export default {
   showShare(){
     this.isShowShare = true;
   },
+  onHideShare(){
+   this.isShowShare = false;
+  }
 }
 </script>
 

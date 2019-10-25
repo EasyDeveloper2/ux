@@ -160,10 +160,6 @@ export default {
       })
     },
     onShare(e) {
-      // router.share({
-      //   type: 'text/html',
-      //   data: '<b>bold</b>',
-      // })
      this.$app.$def.share.share({
         type: 'text/html',
         data: '<b>bold</b>',

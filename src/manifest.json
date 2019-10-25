@@ -6,7 +6,7 @@
   "minPlatformVersion": "1020",
   "icon": "/Common/logo.png",
   "router": {
-    "entry": "pages/index",
+    "entry": "pages/main",
 
     "pages": {
       "pages/main": {

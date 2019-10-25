@@ -1,6 +1,6 @@
 <template>
     <div class="share">
-      <div class="blackBg"> 
+      <div class="blackBg" @click="closeShare"> 
 
       </div>
       <div class="shareInfo flex_c">
@@ -13,7 +13,7 @@
             <text>好友面对面，打开微信，扫一扫</text>
         </div>
         <div class="shareInfo-btn">
-            <div class="shareInfo-btn-weixin flex_c just_c">
+            <div class="shareInfo-btn-weixin flex_c just_c" @click="shareFriend">
                 <image src=""></image>
                 <text>分享给好友</text>
             </div>
@@ -33,7 +33,19 @@ export default {
 
     },
     closeShare() {
-        this.$emit('closeShareBox', false)
+       this.$emit('close')
+    },
+    shareFriend(e){
+      this.$app.$def.share.share({
+        type: 'text/html',
+        data: '<b>bold</b>',
+        success: function (data) {
+          console.log('handling success')
+        },
+        fail: function (data, code) {
+          console.log(`handling fail, code = ${code}`)
+        }
+      })
     }
 }
 </script>
