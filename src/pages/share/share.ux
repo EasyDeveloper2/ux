@@ -1,5 +1,9 @@
 <template>
-    <div class="shareInfo flex_c">
+    <div class="share">
+      <div class="blackBg"> 
+
+      </div>
+      <div class="shareInfo flex_c">
         <div class="shareInfo-title flex_r">
             <text>分享</text>
             <text @click="closeShare" class="close">×</text>
@@ -20,6 +24,7 @@
             </div>
         </div>
     </div>
+    </div>
 </template>
 
 <script>
@@ -34,6 +39,14 @@ export default {
 </script>
 
 <style scoped>
+  .blackBg{
+    position: fixed;
+    top: 0;
+    background-color: #000;
+    opacity: 0.5;
+    width: 750px;
+    height: 100%;
+  }
 .flex_c {
   display: flex;
   flex-direction: column;

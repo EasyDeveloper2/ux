@@ -62,7 +62,7 @@
       <image src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kmh/yundian/goods_detail_kefu.png"></image>
       <image src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kmh/yundian/goods_detail_to_top.png"></image>
     </div>
-    <share if="{{isShowShare}}"></share>
+    <share if="{{isShowShare}}" class="share-code"></share>
   </div>
 </template>
 
@@ -78,6 +78,10 @@ export default {
 </script>
 
 <style scoped>
+  .share-code{
+    position: fixed;
+    bottom: 0;
+  }
 .flex {
   flex: 1;
 }
