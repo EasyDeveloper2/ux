@@ -4,7 +4,8 @@
     <div class="page">
         <tabs onchange="onChangePage" index="{{index}}">
             <tab-content >
-              <Index /> 
+               
+              <Index data="{{indexData}}"/> 
               <Me />
             </tab-content>
          <tab-bar>
@@ -28,20 +29,28 @@
   
 export default {
  private: {
-     index:0
+     index:0,
+     indexData:{}
  },
 onInit() {
-  
+   this.getCloudShopHomePageInfo()
 },
  onChangePage(e){
      this.index = e.index
      if( this.index==0){
       this.$page.setTitleBar({ text: '鲲美云店' }) 
+      this.getCloudShopHomePageInfo()
      }else{
      this.$page.setTitleBar({ text: '掌柜中心' }) 
      }
 
- }
+ },
+     getCloudShopHomePageInfo(){
+      this.$app.$def.methods.getCloudShopHomePageInfo().then(res=>{
+         this.indexData = res.body
+         console.log("this.indexData",this.indexData)
+      })
+    }
 }
 </script>
 

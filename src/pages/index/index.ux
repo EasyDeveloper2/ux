@@ -11,27 +11,26 @@
     <!-- 内容部分 -->
     <div class="content flex">
       <div class="content-imgs flex">
-        <image src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kmh/yundian/home_01.png" style="width:750px;height:900px;"></image>
-        <image src="http://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kmh/yundian/home_00.png" style="width:750px;height:900px;"></image>
+        <image for="{{data.prodBigImgs}}" src="{{$item.imgUrl}}" style="width:750px;"></image>
         <image src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kmh/yundian/home_02.png" style="width:750px;height:120px;"></image>
       </div>
       <div class="content-goodsTop flex">
-        <div class="content-goodsTop-info" @click="onPushToGoodsDetail" data-prodCode="123">
+        <div class="content-goodsTop-info" @click="onPushToGoodsDetail" data-prodCode="{{$item.prodCode}}" for="{{data.kissMeTop3}}">
           <div class="content-goodsTop-info-left">
-            <image src="" style="width:210px;height:210px;background-color:#8a2be2;margin:22px 24px;"></image>
+            <image src="{{$item.mainImgUrl}}" style="width:210px;height:210px;margin:22px 24px;"></image>
           </div>
           <div class="content-goodsTop-info-right flex">
             <div>
-              <text class="content-goodsTop-info-text">Miss candy指甲油指甲油指甲油指甲油</text>
+              <text class="content-goodsTop-info-text">{{$item.prodName}}</text>
               <div style="flex:1"></div>
-              <image src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kmh/yundian/home_top1.png" style="width:63px;height:63px;"></image>
+              <image src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kmh/yundian/home_top{{$idx+1}}.png" style="width:63px;height:63px;"></image>
             </div>
             <div class="content-goodsTop-price">
-              <text class="primaryPrice">￥87.00</text><text class="commissionPrice" style="margin-left:10px"> 佣金:￥122</text>
+              <text class="primaryPrice">￥{{$item.commonPrice}}</text><text class="commissionPrice" style="margin-left:10px"> 佣金:￥{{$item.commissionPrice}}</text>
             </div>
             <div class="content-goodsTop-promote row">
               <image src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kmh/yundian/home_like.png" style="height:30px;width:30px;"></image>
-              <text class="recommend">999人推荐</text>
+              <text class="recommend">{{$item.soldNum}}人推荐</text>
               <text style="flex:1"></text>
               <text class="shareBtn">分享赚钱</text>
             </div>
@@ -43,28 +42,16 @@
       <div class="content-zone flex">
         <div class="content-imgs flex">
           <image src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kmh/yundian/home_03.png" style="width:750px;height:210px;background-color:lightblue;"></image>
-          <image src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kmh/yundian/home_04.png" style="width:750px;height:300px;background-color:lightgreen;"></image>
+          <image if="{{data.kissMeProds}}" src="{{data.kissMeProds.mainProd.imgUrl}}" data-prodCode="{{data.kissMeProds.mainProd.prodCode}}" style="width:750px;"></image>
         </div>
-        <div class="content-goodsList row">
-          <div class="content-goodsList-info flex">
-            <image src="" style="width:337px;height:337px;background-color:#a52a2a;"></image>
+        <div class="content-goodsList row" if="{{data.kissMeProds}}">
+          <div  class="content-goodsList-info flex" for="{{data.kissMeProds.prods}}">
+            <image src="{{$item.mainImgUrl}}" style="width:337px;height:337px;background-color:#a52a2a;"></image>
             <div class="content-goodsList-info-area flex">
-              <text style="font-size:28px;line-height:37px;color:#333;">雪花秀雨润徐虎睡眠面膜中样 15ml</text>
+              <text style="font-size:28px;line-height:37px;color:#333;">{{$item.prodName}}</text>
               <div class="content-goodsList-info-price row">
-                <text style="font-size:24px;color:#D80B2A;font-weight:600;line-height:33px;">佣金:￥300</text>
-                <text style="font-size:24px;color:#999;">已售299件</text>
-              </div>
-              <text class="content-goodsList-info-share">分享赚钱</text>
-            </div>
-          </div>
-
-          <div class="content-goodsList-info flex">
-            <image src="" style="width:337px;height:337px;background-color:#a52a2a;"></image>
-            <div class="content-goodsList-info-area flex">
-              <text style="font-size:28px;line-height:37px;color:#333;">雪花秀雨润徐虎睡眠面膜中样 15ml</text>
-              <div class="content-goodsList-info-price row">
-                <text style="font-size:24px;color:#D80B2A;font-weight:600;line-height:33px;">佣金:￥300</text>
-                <text style="font-size:24px;color:#999;">已售299件</text>
+                <text style="font-size:24px;color:#D80B2A;font-weight:600;line-height:33px;">佣金:￥{{$item.commonPrice}}</text>
+                <text style="font-size:24px;color:#999;">已售{{$item.soldNum}}件</text>
               </div>
               <text class="content-goodsList-info-share">分享赚钱</text>
             </div>
@@ -73,27 +60,27 @@
       </div>
 
       <!--专区  -->
-      <div class="content-zone flex">
+      <div class="content-zone flex" if="{{data.gaosiHotSales}}">
         <div class="content-imgs flex">
           <image src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kmh/yundian/home_05.png" style="width:750px;height:210px;background-color:lightblue;"></image>
-          <image src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kmh/yundian/home_06.png" style="width:750px;height:300px;background-color:lightgreen;"></image>
+          <image src="{{data.gaosiHotSales.mainProd}}" style="width:750px;"></image>
         </div>
         <div class="content-goodsTop flex">
-          <div class="content-goodsTop-info">
+          <div class="content-goodsTop-info" for="{{data.gaosiHotSales.prods}}">
             <div class="content-goodsTop-info-left">
-              <image src="" style="width:210px;height:210px;background-color:#8a2be2;margin:22px 24px;"></image>
+              <image src="{{$item.mainImgUrl}}" style="width:210px;height:210px;background-color:#8a2be2;margin:22px 24px;"></image>
             </div>
             <div class="content-goodsTop-info-right flex">
               <div>
-                <text class="content-goodsTop-info-text">Miss candy指甲油指甲油指甲油指甲油</text>
+                <text class="content-goodsTop-info-text">{{$item.prodName}}</text>
                 <div style="flex:1"></div>
               </div>
               <div class="content-goodsTop-price">
-                <text class="primaryPrice">￥87.00</text>
+                <text class="primaryPrice">￥{{$item.commonPrice}}</text>
               </div>
               <div class="content-goodsTop-promote row">
-                <text class="commissionPrice">佣金:￥</text>
-                <text class="commissionPrice commissionPrice--big">122</text>
+                <text class="commissionPrice">佣金:￥{{$item.commissionPrice}}</text>
+                <text class="commissionPrice commissionPrice--big"></text>
                 <text style="flex:1"></text>
                 <text class="shareBtn">分享赚钱</text>
               </div>
@@ -103,33 +90,21 @@
       </div>
 
       <!--专区  -->
-      <div class="content-zone flex">
+      <div class="content-zone flex" if="{{data.kaiyixiuHotSales}}">
         <div class="content-imgs flex">
           <image src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kmh/yundian/home_07.png" style="width:750px;height:210px;background-color:lightblue;"></image>
-          <image src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kmh/yundian/home_8.png" style="width:750px;height:300px;background-color:lightgreen;"></image>
+          <image src="{{data.kaiyixiuHotSales.mainProd.imgUrl}}" style="width:750px;height:300px;"></image>
         </div>
         <div class="content-goodsList row">
-          <div class="content-goodsList-info flex">
-            <image src="" style="width:337px;height:337px;background-color:#a52a2a;"></image>
+          <div class="content-goodsList-info flex" for="{{data.kaiyixiuHotSales.prods}}">
+            <image src="{{$item.mainImgUrl}}" style="width:337px;height:337px;"></image>
             <div class="content-goodsList-info-area flex">
-              <text style="font-size:28px;line-height:37px;color:#333;">雪花秀雨润徐虎睡眠面膜中样 15ml</text>
+              <text style="font-size:28px;line-height:37px;color:#333;">{{$item.prodName}}</text>
               <div class="content-goodsList-info-price row">
-                <text style="font-size:24px;color:#D80B2A;font-weight:600;line-height:33px;">佣金:￥300</text>
-                <text style="font-size:24px;color:#999;">已售299件</text>
+                <text style="font-size:24px;color:#D80B2A;font-weight:600;line-height:33px;">佣金:￥{{$item.commissionPrice}}</text>
+                <text style="font-size:24px;color:#999;">已售{{$item.soldNum}}件</text>
               </div>
               <text class="content-goodsList-info-share">分享赚钱</text>
-            </div>
-          </div>
-
-          <div class="content-goodsList-info flex">
-            <image src="" style="width:337px;height:337px;background-color:#a52a2a;"></image>
-            <div class="content-goodsList-info-area flex">
-              <text style="font-size:28px;line-height:37px;color:#333;">雪花秀雨润徐虎睡眠面膜中样 15ml</text>
-              <div class="content-goodsList-info-price row">
-                <text style="font-size:24px;color:#D80B2A;font-weight:600;line-height:33px;">佣金:￥300</text>
-                <text style="font-size:24px;color:#999;">已售299件</text>
-              </div>
-              <text class="content-goodsList-info-share" @click="onShare">分享赚钱</text>
             </div>
           </div>
         </div>
@@ -140,20 +115,19 @@
 
 <script>
 export default {
+  props: ['data'],
   data: {
     private: {
       groups: []
     },
-    onInit() {
-        this.getCloudShopHomePageInfo()
-    },
+
     onPushToSearch(){
        this.$app.$def.router.push({
          uri:"/pages/search"
        })
     },
     onPushToGoodsDetail(e) {
-      this.getCloudShopHomePageInfo()
+
       this.$app.$def.router.push({
         uri: "/pages/goodsDetail",
         data: { prodCode: e.target.dataset.prodCode }
@@ -171,12 +145,7 @@ export default {
         }
       })
     },
-    getCloudShopHomePageInfo(){
-      console.log(this.$app.$def.methods)
-      this.$app.$def.methods.getCloudShopHomePageInfo().then(res=>{
-        console.log(res)
-      })
-    }
+
   }
 }
 </script>
@@ -248,7 +217,7 @@ export default {
   width: 750px;
   padding: 24px;
   flex-wrap: wrap;
-  background-color: red;
+
 }
 .content-goodsList-info {
   width: 346px;

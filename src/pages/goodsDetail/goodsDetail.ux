@@ -1,5 +1,7 @@
+<import name="share" src="../share/share.ux"></import>
+ 
 <template>
-  <div class="page flex_c">
+  <div class="page flex_c" >
     <div class="swiper-container flex_c">
       <swiper class="swiper" indicator="{{true}}" duration="{{durationValue}}" vertical="{{isVertical}}" previousmargin="{{marginValue}}" nextmargin="{{marginValue}}" loop="{{loopPlay}}" style="indicatorTop: {{topValue}}">
         <image src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kshop-pro-data_a2e464838418427b813c90b19e4630ef.png"></image>
@@ -9,7 +11,7 @@
       <div class="goodsInfo flex_c">
         <div class="goodsInfo-title flex_r">
           <text class="goodsInfo-title-goodsName">丝凯露-D(SCALP-D)日本进口】发士女士组合无硅油控油去屑…</text>
-          <div class="goodsInfo-title-share flex_c">
+          <div class="goodsInfo-title-share flex_c" @click="showShare">
             <image src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kmh/yundian/fenxiang.png" style="width:45px;height:45px;"></image>
             <text style="font-size:20px;color:#666;line-height:28px;text-align:center;margin-top:6px;">分享</text>
           </div>
@@ -53,23 +55,36 @@
           <text>产地：德国</text>
           <text>规则：300ml</text>
         </div>
-       
+
       </div>
     </div>
- <div class="goodsDetail-sevice flex_c">
-          <image src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kmh/yundian/goods_detail_kefu.png"></image>
-          <image src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kmh/yundian/goods_detail_to_top.png"></image>
-        </div>
+    <div class="goodsDetail-sevice flex_c">
+      <image src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kmh/yundian/goods_detail_kefu.png"></image>
+      <image src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kmh/yundian/goods_detail_to_top.png"></image>
+    </div>
+    <share if="{{isShowShare}}" class="share-code" @close="onHideShare"></share>
   </div>
 </template>
 
 <script>
 export default {
-
+  private: {
+      isShowShare:false 
+  },
+  showShare(){
+    this.isShowShare = true;
+  },
+  onHideShare(){
+   this.isShowShare = false;
+  }
 }
 </script>
 
 <style scoped>
+  .share-code{
+    position: fixed;
+    bottom: 0;
+  }
 .flex {
   flex: 1;
 }
@@ -99,7 +114,7 @@ export default {
 .goodsInfo {
   padding: 32px;
 }
-.goodsInfo-title{
+.goodsInfo-title {
   justify-content: space-between;
 }
 .goodsInfo-title-goodsName {
@@ -133,13 +148,14 @@ export default {
 .goodsInfo-buy-promise text {
   margin-left: 20px;
 }
-.goodsFeatures,.goodsDetail{
+.goodsFeatures,
+.goodsDetail {
   padding: 27px 32px;
   background-color: #fff;
   margin-bottom: 16px;
 }
 .goodsFeatures-title,
-.goodsDetail-title{
+.goodsDetail-title {
   color: #333;
   line-height: 42px;
   height: 42px;
@@ -147,7 +163,7 @@ export default {
   font-weight: 500;
   margin-bottom: 27px;
 }
-.goodsFeatures-list{
+.goodsFeatures-list {
   flex-wrap: wrap;
 }
 .goodsFeatures-list text {
@@ -156,28 +172,28 @@ export default {
   width: 160px;
   height: 60px;
   line-height: 60px;
-  background-color: #EFF2FF;
+  background-color: #eff2ff;
   border-radius: 30px;
   text-align: center;
   margin: 5px;
 }
-.goodsDetail-info{
+.goodsDetail-info {
   justify-content: space-between;
 }
-.goodsDetail-list text{
+.goodsDetail-list text {
   color: #999;
   font-size: 28px;
   line-height: 40px;
   height: 40px;
   margin: 10px 0;
 }
-.goodsDetail-sevice{
-  position:fixed;
+.goodsDetail-sevice {
+  position: fixed;
   right: 32px;
   bottom: 138px;
   width: 88px;
 }
-.goodsDetail-sevice image{
+.goodsDetail-sevice image {
   width: 88px;
   height: 88px;
   border-radius: 44px;

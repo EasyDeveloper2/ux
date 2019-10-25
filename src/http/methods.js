@@ -6,7 +6,6 @@ let getShopManagerIdByToken = (params)=>{
     return post(api.getShopManagerIdByToken,params) 
 }
 let getCloudShopHomePageInfo = (params)=>{
-    console.log("post",post)
     return post(api.getCloudShopHomePageInfo,params) 
 }
 

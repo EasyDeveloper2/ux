@@ -35,6 +35,9 @@
       },
       "pages/goodsDetail": {
         "component": "goodsDetail"
+      },
+      "pages/share": {
+        "component": "share"
       }
     },
     "widgets": {}

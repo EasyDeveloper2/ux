@@ -14,7 +14,10 @@ let request = (url,method,params={}) => {
         header:{accessToken:config.tempToken,"Content-Type":"application/json;charset=utf-8"},
         method:method,
         success:res=>{
-          resolve(res)
+            console.log(res)
+            if(res.code=='200'){
+                resolve(res.data)
+            }
         },
         fail:err=>{
           reject(err)
