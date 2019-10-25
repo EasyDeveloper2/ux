@@ -6,7 +6,7 @@
   "minPlatformVersion": "1020",
   "icon": "/Common/logo.png",
   "router": {
-    "entry": "pages/login",
+    "entry": "pages/index",
 
     "pages": {
       "pages/main": {
@@ -35,6 +35,9 @@
       },
       "pages/goodsDetail": {
         "component": "goodsDetail"
+      },
+      "pages/share": {
+        "component": "share"
       }
     },
     "widgets": {}

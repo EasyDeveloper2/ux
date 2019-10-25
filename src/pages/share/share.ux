@@ -1,0 +1,96 @@
+<template>
+    <div class="shareInfo flex_c">
+        <div class="shareInfo-title flex_r">
+            <text>分享</text>
+            <text @click="closeShare" class="close">×</text>
+        </div>
+        <div class="shareInfo-code flex_c">
+            <image src="" style="width:340px;height:340px;background-color:red;margin-top:30px;"></image>
+            <text>好友面对面，打开微信，扫一扫</text>
+        </div>
+        <div class="shareInfo-btn">
+            <div class="shareInfo-btn-weixin flex_c just_c">
+                <image src=""></image>
+                <text>分享给好友</text>
+            </div>
+            <div style="width:2px;height:92px;background-color:#e8e8e8;margin:0 84px;"></div>
+            <div class="shareInfo-btn-note flex_c just_c">
+                <image src=""></image>
+                <text>生成分享海报</text>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+export default {
+    private: {
+
+    },
+    closeShare() {
+        this.$emit('closeShareBox', false)
+    }
+}
+</script>
+
+<style scoped>
+.flex_c {
+  display: flex;
+  flex-direction: column;
+}
+.flex_r {
+  display: flex;
+  flex-direction: row;
+}
+.just_c {
+  justify-content: center;
+  align-items: center;
+}
+
+.shareInfo {
+  position: fixed;
+  bottom: 0;
+  width: 750px;
+  height: 730px;
+  background-color: #fff;
+  align-items: center;
+}
+.shareInfo-title {
+  width: 100%;
+  padding: 0 32px;
+  height: 83px;
+  line-height: 83px;
+  background-color: #f7f7f7;
+  justify-content: space-between;
+}
+.shareInfo-title .close {
+  font-size: 42px;
+  height: 80px;
+  line-height: 80px;
+  width: 40px;
+  text-align: center;
+}
+.shareInfo-title text {
+  font-size: 28px;
+  color: #333;
+}
+.shareInfo-code text {
+  color: #666;
+  font-size: 24px;
+  margin: 30px 0;
+}
+/* .shareInfo-btn {
+  padding: 0 164px;
+} */
+.shareInfo-btn text {
+  margin-top: 16px;
+  color: #666;
+  font-size: 24px;
+}
+.shareInfo-btn image {
+  width: 74px;
+  height: 74px;
+  background-color: blue;
+  border-radius: 37px;
+}
+</style>

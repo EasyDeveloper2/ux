@@ -139,6 +139,7 @@
 </template>
 
 <script>
+  import router from '@system.router'
 export default {
   data: {
     private: {
@@ -150,12 +151,19 @@ export default {
        })
     },
     onPushToGoodsDetail(e) {
+      // router.push({
+      //   uri: "/pages/goodsDetail",
+      // })
       this.$app.$def.router.push({
         uri: "/pages/goodsDetail",
         data: { prodCode: e.target.dataset.prodCode }
       })
     },
     onShare(e) {
+      // router.share({
+      //   type: 'text/html',
+      //   data: '<b>bold</b>',
+      // })
      this.$app.$def.share.share({
         type: 'text/html',
         data: '<b>bold</b>',
