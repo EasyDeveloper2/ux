@@ -2,7 +2,7 @@
     <div class="page">
      <div class="page__header">
          <div class="page__header__input-container">
-             <img class="page__header__input__icon" src="" alt="" />
+             <image class="page__header__input__icon" src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kmh/yundian/sousuo.png" alt="" ></image>
              <input class="page__header__input" type=""  placeholder="输入你想要搜索的商品关键字"></input>
          </div>
      </div>
@@ -59,7 +59,6 @@ export default {
    width: 30px;
    height: 30px;
    margin-left: 30px;
-   background-color: #333333;
  }
  .page__header__input{
    margin-left: 16px;

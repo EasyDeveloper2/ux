@@ -3,6 +3,7 @@
     <!-- 搜索区域 -->
     <div class="header">
       <div class="header-search" @click="onPushToSearch">
+        <image class="page__header__input__icon" src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kmh/yundian/sousuo.png" alt="" ></image>
         <text>输入你想销售的商品关键字</text>
       </div>
     </div>
@@ -133,7 +134,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </template>
@@ -144,12 +144,16 @@ export default {
     private: {
       groups: []
     },
+    onInit() {
+        this.getCloudShopHomePageInfo()
+    },
     onPushToSearch(){
        this.$app.$def.router.push({
          uri:"/pages/search"
        })
     },
     onPushToGoodsDetail(e) {
+      this.getCloudShopHomePageInfo()
       this.$app.$def.router.push({
         uri: "/pages/goodsDetail",
         data: { prodCode: e.target.dataset.prodCode }
@@ -165,6 +169,12 @@ export default {
         fail: function (data, code) {
           console.log(`handling fail, code = ${code}`)
         }
+      })
+    },
+    getCloudShopHomePageInfo(){
+      console.log(this.$app.$def.methods)
+      this.$app.$def.methods.getCloudShopHomePageInfo().then(res=>{
+        console.log(res)
       })
     }
   }
@@ -198,10 +208,16 @@ export default {
   width: 686px;
   border-radius: 40px;
   background-color: #fff;
+  align-items: center;
 }
 .header-search-text {
   width: 600px;
   /* background-color: red; */
+}
+.page__header__input__icon{
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
 }
 /*内容部分*/
 .content {

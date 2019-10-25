@@ -8,6 +8,7 @@ import prompt from '@system.prompt'
 import share from '@system.share'
 import fetch from '@system.fetch'
 import request from '@system.request'
+import methods from './http/methods.js'
 
 export default {
   showMenu: util.showMenu,
@@ -16,8 +17,8 @@ export default {
   prompt:prompt,
   share,
   fetch,
-  request
-
+  request,
+  methods
 }
 </script>
 

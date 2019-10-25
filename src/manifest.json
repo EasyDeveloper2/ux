@@ -4,9 +4,9 @@
   "versionName": "1.0.0",
   "versionCode": "1",
   "minPlatformVersion": "1020",
-  "icon": "/Common/logo.png",
+  "icon": "/Common/logox.png",
   "router": {
-    "entry": "pages/login",
+    "entry": "pages/main",
 
     "pages": {
       "pages/main": {
@@ -88,8 +88,8 @@
     "logLevel": "debug"
   },
   "display": {
-    "titleBarBackgroundColor": "#f2f2f2",
-    "titleBarTextColor": "#414141",
+    "titleBarBackgroundColor": "#D80B2A",
+    "titleBarTextColor": "#fffff",
     "menu": true,
     "pages": {
       "pages/phoneLogin": {

@@ -30,8 +30,17 @@ export default {
  private: {
      index:0
  },
+onInit() {
+  
+},
  onChangePage(e){
      this.index = e.index
+     if( this.index==0){
+      this.$page.setTitleBar({ text: '鲲美云店' }) 
+     }else{
+     this.$page.setTitleBar({ text: '掌柜中心' }) 
+     }
+
  }
 }
 </script>
