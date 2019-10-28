@@ -3,7 +3,7 @@
     <!-- 搜索区域 -->
     <div class="header">
       <div class="header-search" @click="onPushToSearch">
-        <image class="page__header__input__icon" src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kmh/yundian/sousuo.png" alt="" ></image>
+        <image class="page__header__input__icon" src="https://kshop-pro-data.oss-cn-hangzhou.aliyuncs.com/kmh/yundian/sousuo.png" alt=""></image>
         <text>输入你想销售的商品关键字</text>
       </div>
     </div>
@@ -45,10 +45,10 @@
           <image if="{{data.kissMeProds}}" src="{{data.kissMeProds.mainProd.imgUrl}}" data-prodCode="{{data.kissMeProds.mainProd.prodCode}}" style="width:750px;"></image>
         </div>
         <div class="content-goodsList row" if="{{data.kissMeProds}}">
-          <div  class="content-goodsList-info flex" for="{{data.kissMeProds.prods}}">
+          <div class="content-goodsList-info flex" for="{{data.kissMeProds.prods}}" @click="onPushToGoodsDetail" data-prodCode="{{$item.prodCode}}">
             <image src="{{$item.mainImgUrl}}" style="width:337px;height:337px;background-color:#a52a2a;"></image>
             <div class="content-goodsList-info-area flex">
-              <text style="font-size:28px;line-height:37px;color:#333;">{{$item.prodName}}</text>
+              <text class="content-item-title">{{$item.prodName}}</text>
               <div class="content-goodsList-info-price row">
                 <text style="font-size:24px;color:#D80B2A;font-weight:600;line-height:33px;">佣金:￥{{$item.commonPrice}}</text>
                 <text style="font-size:24px;color:#999;">已售{{$item.soldNum}}件</text>
@@ -66,7 +66,7 @@
           <image src="{{data.gaosiHotSales.mainProd}}" style="width:750px;"></image>
         </div>
         <div class="content-goodsTop flex">
-          <div class="content-goodsTop-info" for="{{data.gaosiHotSales.prods}}">
+          <div class="content-goodsTop-info" for="{{data.gaosiHotSales.prods}}" @click="onPushToGoodsDetail" data-prodCode="{{$item.prodCode}}">
             <div class="content-goodsTop-info-left">
               <image src="{{$item.mainImgUrl}}" style="width:210px;height:210px;background-color:#8a2be2;margin:22px 24px;"></image>
             </div>
@@ -96,10 +96,10 @@
           <image src="{{data.kaiyixiuHotSales.mainProd.imgUrl}}" style="width:750px;height:300px;"></image>
         </div>
         <div class="content-goodsList row">
-          <div class="content-goodsList-info flex" for="{{data.kaiyixiuHotSales.prods}}">
+          <div class="content-goodsList-info flex" for="{{data.kaiyixiuHotSales.prods}}" @click="onPushToGoodsDetail" data-prodCode="{{$item.prodCode}}">
             <image src="{{$item.mainImgUrl}}" style="width:337px;height:337px;"></image>
             <div class="content-goodsList-info-area flex">
-              <text style="font-size:28px;line-height:37px;color:#333;">{{$item.prodName}}</text>
+              <text class="content-item-title">{{$item.prodName}}</text>
               <div class="content-goodsList-info-price row">
                 <text style="font-size:24px;color:#D80B2A;font-weight:600;line-height:33px;">佣金:￥{{$item.commissionPrice}}</text>
                 <text style="font-size:24px;color:#999;">已售{{$item.soldNum}}件</text>
@@ -121,20 +121,23 @@ export default {
       groups: []
     },
 
-    onPushToSearch(){
-       this.$app.$def.router.push({
-         uri:"/pages/search"
-       })
+    onPushToSearch() {
+      this.$app.$def.router.push({
+        uri: "/pages/search"
+      })
     },
     onPushToGoodsDetail(e) {
-
+      // console.log(e.target.dataset)
+      let data = e.target.dataset;
+      console.log(data)
       this.$app.$def.router.push({
         uri: "/pages/goodsDetail",
-        data: { prodCode: e.target.dataset.prodCode }
+        // data: { prodCode: e.target.dataset.prodCode}
+        params: data
       })
     },
     onShare(e) {
-     this.$app.$def.share.share({
+      this.$app.$def.share.share({
         type: 'text/html',
         data: '<b>bold</b>',
         success: function (data) {
@@ -183,7 +186,7 @@ export default {
   width: 600px;
   /* background-color: red; */
 }
-.page__header__input__icon{
+.page__header__input__icon {
   width: 30px;
   height: 30px;
   margin-right: 10px;
@@ -212,12 +215,13 @@ export default {
   font-weight: 600;
   color: rgba(51, 51, 51, 1);
   line-height: 42px;
+  lines: 2;
+  text-overflow: ellipsis;
 }
 .content-goodsList {
   width: 750px;
   padding: 24px;
   flex-wrap: wrap;
-
 }
 .content-goodsList-info {
   width: 346px;
@@ -269,6 +273,13 @@ export default {
     rgba(248, 50, 78, 1) 100%
   ); */
   border-radius: 28px;
+}
+.content-item-title {
+  font-size: 28px;
+  line-height: 37px;
+  color: #333;
+  lines: 2;
+  text-overflow: ellipsis;
 }
 
 /* 专区 */
