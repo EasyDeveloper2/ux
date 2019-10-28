@@ -9,7 +9,12 @@ let getCloudShopHomePageInfo = (params)=>{
     return post(api.getCloudShopHomePageInfo,params) 
 }
 
+let shopManagerInfo = (params) => {
+    return post(api.shopManagerInfo,params)
+}
+
 export default{
     getShopManagerIdByToken,
-    getCloudShopHomePageInfo
+    getCloudShopHomePageInfo,
+    shopManagerInfo
 }
